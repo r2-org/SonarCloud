@@ -1,1 +1,6 @@
-{}
+{
+  "terraform.meetdpv.com/meetdpv/sonarcloud": {
+    "hash": "h1:4C1Yl8sqrlI0M+/iQsPdd2NpFTmElYS6MvUwguwyMtM=",
+    "version": "1.0.0"
+  }
+}
