@@ -1,0 +1,39 @@
+name: SonarCloud Terraform Provider
+on:
+  push:
+    branches: 
+      - main
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Go Binary
+        uses: actions/setup-go@v2.1.3
+        with:
+          go-version: 1.15.5
+      - name: code checkout
+        uses: actions/checkout@v2
+      - name: Generate Semantic Version
+        uses: PaulHatch/semantic-version@v3.2
+        with:
+          branch: "main"
+          tag_prefix: "v"
+          bump_each_commit: true
+          short_tags: true
+      - name: Linting Go Code
+        uses: Jerome1337/golint-action@v1.0.2
+      - name: build sonarcloud provider
+        run: |
+          make build
+      - name: Upload Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: terraform-provider-sonarcloud
+          asset_name: terraform-provider-sonarcloud
+          tag: ${{ github.ref }}
+          body: "Terraform SonarCloud Provider"
