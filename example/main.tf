@@ -1,7 +1,8 @@
 terraform {
   required_providers {
     sonarcloud = {
-      source  = "terraform.kriyaansh.com/kriyaansh/sonarcloud"
+     # source  = "terraform.kriyaansh.com/kriyaansh/sonarcloud"
+      source  = "https://github.com/meetdpv/SonarCloud"
       version = ">= 1.0"
     }
   }

@@ -19,7 +19,7 @@ variable scheme {
 
 variable organization {
   description = "contains the sonarcloud organization name"
-  default     = "devops575"
+  default     = "meetdpv"
 }
 
 variable visibility {

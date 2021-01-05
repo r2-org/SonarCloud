@@ -1,4 +1,5 @@
-module github.com/kriyaanshtechnologies/SonarCloud
+// module github.com/kriyaanshtechnologies/SonarCloud
+module github.com/meetdpv/SonarCloud
 
 go 1.13
 

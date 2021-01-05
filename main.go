@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
-	"github.com/kriyaanshtechnologies/SonarCloud/sonarcloud"
+	"github.com/meetdpv/SonarCloud/sonarcloud"
 )
 
 func main() {
